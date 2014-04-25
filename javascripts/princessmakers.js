@@ -10,6 +10,10 @@ app.config(['$routeProvider', function($routeProvider) {
         templateUrl: 'templates/register.html',
         controller: 'RegisterController'
     })
+    .when('/account', {
+        templateUrl: 'templates/account.html',
+        controller: 'AccountController'
+    })
     .otherwise({
         redirectTo: '/'
     });
@@ -27,11 +31,17 @@ app.run(function ($rootScope) {
             }
         });
     }
-};
+});
 
 
 
 app.controller('HomeController', ['$scope', '$rootScope', function ($scope, $rootScope) {
 }]);
 app.controller('RegisterController', ['$scope', '$rootScope', function ($scope, $rootScope) {
+}]);
+app.controller('AccountController', ['$scope', '$rootScope', '$location', function ($scope, $rootScope, $location) {
+    $scope.signedin = true;
+    $scope.logout = function() {
+        $location.path("/");
+    };
 }]);

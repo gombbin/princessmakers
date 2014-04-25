@@ -1,4 +1,7 @@
+.signed_in {
+    background-color: #CC8080;
+}
 
-.jumbotron {
-    background-color: #A1C7A1; 
+.signed_out {
+	background-color: #A1C7A1;
 }
